@@ -11,8 +11,12 @@ export default function Home() {
   const [ tempText, setTempText] = useState<string>("");
 
   const addTodo = (text: string) => {
-    
-    setTodos([...todos, text]);
+    if (text === "") {
+      return todos;
+      
+    }else{
+      setTodos([...todos, text]);
+    }
   };
 
   useEffect(()=>{
@@ -43,7 +47,7 @@ export default function Home() {
           setTempText('');
         }}>Add</button>
         <ul>
-          {todos.map((todo :(''),idx : any)=>{
+          {todos.map((todo :string,idx : any)=>{
             return <li key={idx}>{todo}</li>
           })}
         </ul>
