@@ -12,8 +12,7 @@ export default function Home() {
 
   const addTodo = (text: string) => {
     if (text === "") {
-      return todos;
-      
+      return 'never prints empty string';
     }else{
       setTodos([...todos, text]);
     }
